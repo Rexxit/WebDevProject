@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* Mobile first -- all styles up to the media query are for mobile */
+
+
+/* I think the browser default should be border-box. With border-box, the width of the padding and border
+   are counted as part of the width of the element (not the margin however). This makes it easier to fit 
+   elements into a row. */
+* {
+    box-sizing: border-box;  
+}
+
+/*************************************************************************************************************************/
+
+.row {  /* acts like a 'row' to hold columns that add up to 98-100% wide (can be a bit less, but not more 
+        to prevent wrapping) */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0.5rem;  /* 1st is top/bottom, 2nd is left/right */
+    margin-bottom: 1rem;  /* the space between sections */
+}
+
+/*************************************************************************************************************************/
+
+.column {
+    padding: 0.5rem 0.5rem; /* 1st is top/bottom, 2nd is left/right */
+    width: 100%;
+}
+/*************************************************************************************************************************/
+
+.column img { /* images will fill their container */
+    width:100%;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 5px grey;
+}
+
+/*************************************************************************************************************************/
+
+/* desktop only */
+@media only screen and (min-width: 600px) { 
+
+    .row { 
+        flex-direction: row;
+    }
+
+    /* add as many more of these different width styles as you need */
+    .column25 {
+        width: 2%;
+    }
+    .column33 {
+        width: 2%;
+    }
+    .column50 {
+        width: 2%;
+    }
+    .column66 {
+        width: 2%;
+    }
+    .column75 {
+        width: 2%;
+    }
+}

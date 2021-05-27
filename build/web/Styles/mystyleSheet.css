@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 2, 2020, 9:38:11 PM
+    Author     : wild_
+*/
+
+#titleNav 
+{ /* titleNav is fixed, always at the top */
+    
+    display:flex; /*Added meadia query but still not working. */
+    
+    flex-direction: column; /*Added meadia query but still not working. */
+    
+    /* position fixed removes the element from the normal flow, placing it where you specify with top/bottom, left/right */
+    position:fixed; 
+    top:0px;
+    left:0px;
+    z-index: 1;     /* To make sure titleNav is on top of content, give it a higher z-index than content 
+                    (content would have default value of zero). */
+    width: 100%;    
+
+    background-color:black;
+    padding-bottom: 10px; 
+    /* height: 86px; /* NEW */
+    color: red;
+    font-family: serif; 
+    font-weight: bold;
+
+}
+
+#pageTitle { /* no change */
+    padding:12px;
+    padding-bottom: 0px;
+    font-size:48px;
+    letter-spacing: 1.5px; /* spaces out letters a bit */
+}
+
+#nav { /* fix the nav bar */
+    position: fixed; 
+    top: 0px;
+    right: 0px;
+    text-align:right;
+    font-size:24px;
+    padding-bottom: 12px;
+
+    padding-top:32px;
+}
+
+
+#nav a {  /* no change */
+    text-decoration:none;  /* Do not want links in "nav" to be underlined */
+    color: red; /* light gray: to provide color for links, you have to style the "a" tag */
+}
+
+#content {  /* Added padding top and bottom to prevent top/bottom content from getting hidden under titleNav/footer */ 
+
+    padding:12px;
+    padding-top: 80px; /* prevent the top of the content from getting hidden under the fixed titleNav */
+    padding-bottom: 40px; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+    margin-top: 7rem;
+/*    I just added this    */
+    margin-bottom: 2.5rem;
+}
+
+#footer { /* footer fixed, always at the bottom */
+    position: fixed;
+    bottom: 0px; 
+    left: 0px; 
+    z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+
+    background-color:black;
+    color: red; 
+    width:100%;
+    text-align:center;
+    padding: 3px;	 	 
+}
+
+/*Media query and it;s still not working....*/
+@media only screen and (min-width: 600px)
+{
+    #content 
+    {
+        margin-top: 4rem;
+    }
+    
+    #titleNav
+    {
+        flex-direction: row;
+        justify-content: space-between
+    }
+}
