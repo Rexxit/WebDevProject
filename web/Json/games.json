@@ -1,0 +1,61 @@
+[
+    {   
+        "game_table_id": "1",
+        "game_name": "Crash Bandicoot 4: It's About Time",
+        "game_image": "https://avatarfiles.alphacoders.com/242/242417.png",
+        "game_url": "https://www.gameinformer.com/product/crash-bandicoot-4-its-about-time",
+        "game_cost": "$60",
+        "release_date": "2020-10-02",
+        "game_genre": "Action-Platformer",
+        "game_console": "Playstation, Xbox",
+        "user_email": "wayne.cook@temple.edu"
+    },
+    
+    {   
+        "game_table_id": "2",
+        "game_name": "Amnesia: Rebirth",
+        "game_image": "https://cdn.wccftech.com/wp-content/uploads/2020/03/WCCFamnesiarebirth1-410x238.jpg",
+        "game_url": "https://cdn.wccftech.com/wp-content/uploads/2020/03/WCCFamnesiarebirth1.jpg",
+        "game_cost": "$30",
+        "release_date": "2020-10-20",
+        "game_genre": "Horror",
+        "game_console": "Playstation, PC",
+        "user_email": "definitelyNotJoker@gotham.com"
+    },
+    
+    {   
+        "game_table_id": "3",
+        "game_name": "World of Warcraft: Shadowlands",
+        "game_image": "https://games-guides.com/wp-content/uploads/2020/06/Wow-Shadowlands.jpg",
+        "game_url": "https://worldofwarcraft.com/en-us/shadowlands",
+        "game_cost": "$40",
+        "release_date": "2020-10-27",
+        "game_genre": "MMO",
+        "game_console": "PC",
+        "user_email": "batman@gotham.org"
+    },
+
+    {   
+        "game_table_id": "4",
+        "game_name": "Watch Dogs: Legion",
+        "game_image": "https://cdn.cnn.com/cnnnext/dam/assets/190611164638-3-underscored-watch-dogs-legion-live-video.jpg",
+        "game_url": "https://watchdogs.ubisoft.com/game/en-us/",
+        "game_cost": "$60",
+        "release_date": "2020-10-29",
+        "game_genre": "Action-adventure",
+        "game_console": "Playstation, Xbox, PC",
+        "user_email": "robinIsAwesome@gotham.org"
+    },
+    
+    {   
+        "game_table_id": "5",
+        "game_name": "Dirt 5",
+        "game_image": "https://images.pushsquare.com/f0cddf4cdf0da/dirt-5-ps5-playstation-5-1.900x.jpg",
+        "game_url": "https://dirtgame.com/dirt5",
+        "game_cost": "$60",
+        "release_date": "2020-11-06",
+        "game_genre": "Racing",
+        "game_console": "Playstation, Xbox, PC",
+        "user_email": "flashIsFast@justiceleague.org"
+    }
+]

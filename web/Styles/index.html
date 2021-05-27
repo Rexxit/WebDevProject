@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Styles/mystyleSheet.css" type="text/css"/>
+        <link rel="stylesheet" href="Styles/slideShow.css" type="text/css"/>
+        <link rel="stylesheet" href="Styles/dropdown.css" type="text/css"/>
+        <link rel="stylesheet" href="Styles/clickSort.css" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Use this type of comment within HTML -->
+        <title>Wayne's GamerZone</title>
+
+        <!-- this is your internal style sheet -->
+        <style> 
+
+            /*  Use ONLY the "slash star ... star slash" style comment inside a style sheet */
+
+            /* Don't want tiny white border inside browser window - apply to html and body. */
+            html, body 
+            {  
+                margin:0; 
+                padding:0; 
+            }
+
+            /*            THE BODY OF THE SITE              */
+            body 
+            { 
+                background-color: rgb(145, 54, 141); /* this is the turqoise color */
+                color: lightgreen;  /* color of font */
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; /* no tail font is more readable for small font */
+                background-image: url("pics/gamer4.jpg");
+                background-attachment: fixed;
+/*                background-position: center;*/   /* keeping this for later */
+/*                background-repeat: repeat;*/    /* keeping this for later */
+                background-size: auto;
+                font-size:16px;
+            }            
+        </style>
+    </head>
+    
+    <body>
+        <div id="titleNav">
+
+            <div id="pageTitle">
+                Wayne's GamerZone
+            </div>
+
+        <!--           This is the drop down menu stuff here.                -->
+            <div id="nav">
+                <div class="dropdown">
+                    <a href="#/home">Home</a>
+                </div>
+                <div class="dropdown">
+                    <div class="dropHeader" onclick="drop(this)">Account</div>
+                    <div class="dropContent">
+                        <a>Register</a> <br/>
+                        <a>Log In</a> <br/>
+                        <a>Profile</a> <br/>
+                        <a>Log Out</a>
+                    </div> 
+                </div>
+                <div class="dropdown">
+                    <div class="dropHeader" onclick="drop(this)">Search</div>
+                    <div class="dropContent">
+                        <a href="#/Gamers">Gamers</a> <br/>
+                        <a href="#/UpcomingGames">Upcoming Games</a> <br/>
+                        <a>Streamers</a> <br/>
+                        <a href="#/slideShows">slideShows</a> 
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropHeader" onclick="drop(this)">Tutorials</div>
+                    <div class="dropContent">
+                        <a>Proposal</a> <br/>
+                        <a>Proof of Concept</a> <br/>
+                        <a>Tutorial Home</a> <br/>
+                        <a>Demo</a> <br/>
+                    </div> 
+                </div>          
+                <div class="dropdown">
+                     <a href="#/blog">Blog</a>
+                </div>
+
+            </div>
+        <!--        The end of drop down menu stuff here.                    -->
+
+        </div>     <!--        THE END OF DIV ID=NAV                        -->
+
+<!--        <div id="content"></div>  content. [[Keep track of nesting]] -->
+ 
+        <br/>
+        <br/>
+        
+        <br/>
+        <br/>
+        
+                <!--        Container for the images **************************************************** -->
+        <div class='slideShowContainer'>
+            <div class="slideShow" id="firstSlideId">
+            </div>
+            
+            <div  class="slideShow" id="secondSlideId">
+            </div>
+           
+            <div  class="slideShow" id="thirdSlideId">
+            </div>
+
+        </div>
+        <!--Note: the JavaScript code expects there to be a DOM object with id "view" 
+        This is where the content is placed. -->
+        <div id="view">
+            
+        </div>
+ 
+<!--         THE SCRIPTS THAT WAS ADDED FOR THE DROPDOWN MENU               -->
+        
+        <!-- the script for the home and blog-->
+        <script src="JS/Components/home.js"></script>
+        <script src="JS/Components/blog.js"></script>
+        <script src="JS/Components/slideShows.js"></script>
+        <script src="JS/Components/users.js"></script>
+        <script src="JS/Components/games.js"></script>
+        <script src="JS/Reusable/dropdownFW.js"></script>  
+        <script src="JS/Reusable/routeFW.js"></script>
+        <script src="JS/Reusable/ajax.js"></script>  
+        <script src="JS/Reusable/MakeSlideShow.js"></script>
+        <script src="JS/Reusable/makeTable.js"></script>
+        <script>
+
+            "use strict";
+
+            // Declare an array to store our routes:
+            var myRoutes = [];
+
+            // Add link/content entries into the route array.
+            // Remember that with JS associative array syntax, the keys look like index values even though 
+            // they are character strings, not integers. 
+            // In this version of the code, the value stored is a function not a character string.
+            myRoutes['#/home'] = home;
+            myRoutes['#/blog'] = blog; // blog is a function stored in js/components/blog.js
+            myRoutes['#/slideShows'] = slideShows;
+            myRoutes['#/Gamers'] = users;
+            myRoutes['#/UpcomingGames'] = games;
+
+            // routeFw returns an object that has private and public 
+            // data members and methods. 
+            // This "consumer code" specifies input parameters of an array of objects that each 
+            // specify path and content, id of DOM element where the FW is to place the content, 
+            // and the desired starting path. 
+            var myRouteFw = routeFw
+            ({
+                routeArray: myRoutes,
+                contentId: "content", 
+                startLink: "#/home"
+            });
+
+            // print the routes (check console.log)
+            // This example is a bit silly (since the HTML page already has access to the route 
+            // array), but it does show you how the HTML page can get a reference to an object 
+            // and then use that to invoke any public methods on the object. 
+            myRouteFw.printRoutes();
+        </script>
+        
+           
+        <div id="footer">
+            [ Wayne Cook ]
+        </div>
+    </body>
+</html>
